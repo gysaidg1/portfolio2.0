@@ -1,0 +1,48 @@
+                                /*Navbar*/
+header {
+    padding: 20px 50px;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo-g {
+    text-transform: uppercase;
+    font-family: /*'Great Vibes', cursive*/ "Times New Roman", Times, serif;
+    font-size: 2.5rem;
+    text-shadow: 0 0 10px rgb(119, 0, 143);
+}
+
+.logo-g a { 
+    color: rgb(186, 22, 219);
+    text-decoration: none;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: 0.3s;
+}
+
+nav ul li a:hover {
+    color: rgb(186, 22, 219);
+    text-shadow: 0 0 8px rgb(119, 0, 143);
+}

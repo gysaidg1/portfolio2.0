@@ -2,9 +2,10 @@
 import { useState } from 'react'
 import './style.css'
 import ftper from '../../assets/ftper.jpg'
-import mcMotors from '../../assets/mc\'motors.JPG'
+import mcMotors from '../../assets/mc\'motors.JPG' 
 import uvaflix from '../../assets/uvaflix.jpg'
 import obralyx from '../../assets/obralyx.jpg'
+
 
 const projetos = [
   {
@@ -27,7 +28,7 @@ const projetos = [
     categoria: "UX/UI",
     imagens: [uvaflix],
     demo: '#',
-    github: '#'
+    github: 'https://github.com/marquescmd/group-website'
   },
   {
     id: 3,
@@ -259,7 +260,71 @@ function Home() {
           )}
         </div>
       </section>
+
+
+      <section className="contato">
+
+    <div className="contato-container">
+        <form className="formulario">
+            <h1>Vamos Conversar?</h1>
+            <input
+                type="text"
+                placeholder="Seu nome"
+            />
+            <input
+                type="email"
+                placeholder="Email"
+            />
+            <textarea placeholder="Mande uma mensagem"></textarea>
+            <button type="submit">
+                Enviar
+            </button>
+        </form>
+
+
+        
+        <aside className="redes">
+
+            <h1>Além do Código</h1>
+            <div className="links">
+
+                <a href="#" target="_blank">
+                    LinkedIn
+                </a>
+
+                <a href="#" target="_blank">
+                    WhatsApp
+                </a>
+
+                <a href="#" target="_blank">
+                    Instagram
+                </a>
+
+                <a href="#" target="_blank">
+                    Currículo
+                </a>
+
+                <a href="#" target="_blank">
+                    GitHub
+                </a>
+            </div>
+        </aside>
+    </div>
+</section>
       </main>
+
+      <footer class="fbtm">
+    <div class="paibck">
+        <div class="d1">
+            <p class="uva">GYOVANNA SAID GILES</p>
+            <p>Portfólio</p>
+        </div>        
+        <div class="d2">
+            <p>© 2026 - Desenvolvido por <span>Gyovanna Said Giles</span></p>
+            <p class="tdw">Conecte-se linkedIN</p>
+        </div>
+    </div>
+</footer>   
     </>
   )
 }

@@ -1,10 +1,23 @@
 
 import { useState } from 'react'
 import './style.css'
+import './form.js'
 import ftper from '../../assets/ftper.jpg'
 import mcMotors from '../../assets/mc\'motors.JPG' 
 import uvaflix from '../../assets/uvaflix.jpg'
 import obralyx from '../../assets/obralyx.jpg'
+import { supabase } from '../lib/supabaseClient'
+
+const { data, error } = await supabase
+  .from('usuarios')
+  .insert([
+    {
+      nome: 'Gyovanna',
+      email: 'teste@email.com',
+      telefone: '21999999999',
+      mensagem: 'Olá!'
+    }
+  ])
 
 
 const projetos = [
@@ -329,6 +342,5 @@ function Home() {
   )
 }
 
-// teste
 
 export default Home

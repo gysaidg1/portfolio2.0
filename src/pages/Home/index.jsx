@@ -13,17 +13,16 @@ const projetos = [
     id: 1,
     nome: "MC' Motors",
     descricao: "Landing page automotiva.",
-    tecnologias: ["HTML", "CSS", "JavaScript", "Node.js", "MySQL"],
-    linguagem: "JavaScript",
+    tecnologias: ["HTML", "CSS"],
     categoria: "Frontend",
     imagens: [mcMotors],
     demo: '#',
-    github: '#'
+    github: 'https://github.com/gysaidg1/mcmotors'
   },
   {
     id: 2,
     nome: "UvaFlix",
-    descricao: "Trabalho de faculdade em streaming e catálogo de filmes.",
+    descricao: "Trabalho de faculdade: Streaming e catálogo de filmes.",
     tecnologias: ["HTML", "CSS", "JavaScript", "API"],
     linguagem: "JavaScript",
     categoria: "UX/UI",
@@ -40,11 +39,11 @@ const projetos = [
     categoria: "UX/UI",
     imagens: [obralyx],
     demo: '#',
-    github: '#'
+    github: 'https://github.com/gysaidg1/obralyx'
   }
 ]
 
-const categorias = ["Frontend", "UX/UI"]
+const categorias = ["Frontend", "Backend", "Fullstack", "UX/UI"]
 
 function Home() {
   const [form, setForm] = useState({
@@ -73,16 +72,6 @@ const handleSubmit = async (e) => {
     return
   }
 
-  try {
-  await fetch('http://localhost:3001/enviar', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(form)
-  })
-} catch (err) {
-  console.error('Erro ao enviar email:', err)
-}
-
   alert('Mensagem enviada!')
 
   setForm({
@@ -97,6 +86,8 @@ const handleSubmit = async (e) => {
   const [filtrosAbertos, setFiltrosAbertos] = useState(false)
   const [categoriasAtivas, setCategoriasAtivas] = useState({
     Frontend: true,
+    Backend: true,
+    Fullstack: true,
     'UX/UI': true
   })
 
@@ -127,6 +118,8 @@ const handleSubmit = async (e) => {
   const resetarCategorias = () => {
     setCategoriasAtivas({
       Frontend: true,
+      Backend: true,
+      Fullstack: true,
       'UX/UI': true
     })
   }
@@ -157,21 +150,21 @@ const handleSubmit = async (e) => {
         <nav>
           <div className="logo-g"><a href="index.html">Said's</a></div>
           <ul>
-            <li><a href="">INICIO</a></li>
-            <li><a href="">PROJETOS</a></li>
-            <li><a href="">CONTATO</a></li>
+            <li><a href="#inicio">INICIO</a></li>
+            <li><a href="#projetos">PROJETOS</a></li>
+            <li><a href="#contato">CONTATO</a></li>
           </ul>
         </nav>
       </header>
 
       <main>
-        <section className="inicio">
+        <section className="inicio" id="inicio">
           <div className="topicos">
 
           <div className="topico">
             <h2>Quem sou eu?</h2>
             <div className="texto-hover">
-              <p>Olá! Meu nome é Said e sou um desenvolvedor web.</p>
+              <p>Olá! Meu nome é Gyovanna, sou estudante de Ciência da Computação e desenvolvedora full-stack. Tenho conhecimentos em HTML, CSS, JavaScript, React, Node.js, MySQL e Supabase, além de experiência com APIs, integração de serviços e criação de interfaces no Figma.</p>
             </div>
           </div>
 
@@ -185,7 +178,7 @@ const handleSubmit = async (e) => {
           <div className="topico">
             <h2>Objetivos</h2>
             <div className="texto-hover">
-              <p>Meu objetivo é criar websites e aplicações web funcionais e esteticamente agradáveis.</p>
+              <p>Meu objetivo é me aprofundar no desenvolvimento full-stack, ganhar experiência profissional e aprimorar minhas habilidades continuamente. Quero usar meus conhecimentos para desenvolver soluções úteis, enfrentar novos desafios e contribuir positivamente para a sociedade por meio da tecnologia.</p>
             </div>
           </div>
         </div>
@@ -193,12 +186,12 @@ const handleSubmit = async (e) => {
         <div className="topico historia">
           <h2>Minha História</h2>
           <div className="texto-hover">
-            <p>Comecei minha jornada no desenvolvimento web há alguns anos e sempre me apaixonei por criar soluções inovadoras e impactantes.</p>
+            <p>Meu interesse por tecnologia começou aos 13 anos em 2020, quando comecei a explorar como a internet funciona. Desde então, estudo programação e desenvolvo projetos acadêmicos e pessoais para aprimorar minhas habilidades.</p>
           </div>
         </div>
       </section>
 
-      <section className="projetos">
+      <section className="projetos" id="projetos">
         <div className="projetos-header">
           <h1>PROJETOS</h1>
 
@@ -294,8 +287,8 @@ const handleSubmit = async (e) => {
                       ))}
                     </div>
                     <div className="btns">
-                      <a href={projeto.demo} target="_blank">Demo</a>
-                      <a href={projeto.github} target="_blank">Github</a>
+                      {/* <a href={projeto.demo} target="_blank" rel="noopener noreferrer">Demo</a> */}
+                      <a href={projeto.github} target="_blank" rel="noopener noreferrer">Github</a>
                     </div>
                   </div>
                 </article>
@@ -308,7 +301,7 @@ const handleSubmit = async (e) => {
       </section>
 
 
-      <section className="contato">
+      <section className="contato" id="contato">
 
     <div className="contato-container">
         <form className="formulario" onSubmit={handleSubmit}>
@@ -342,30 +335,25 @@ const handleSubmit = async (e) => {
   </button>
 </form>
 
-
-        
         <aside className="redes">
-
             <h1>Além do Código</h1>
             <div className="links">
-
-                <a href="#" target="_blank">
+                <a href="https://www.linkedin.com/in/gyovanna-said-6725203b8/" target="_blank" rel="noopener noreferrer">
                     LinkedIn
                 </a>
-
-                <a href="#" target="_blank">
+                <a
+               href="https://wa.me/5521989299201?text=Olá%2C%20vi%20seu%20portfólio%20e%20gostaria%20de%20conversar!"
+               target="_blank"
+               rel="noopener noreferrer">
                     WhatsApp
                 </a>
-
-                <a href="#" target="_blank">
+                <a href="https://www.instagram.com/gy.saidg/" target="_blank" rel="noopener noreferrer">
                     Instagram
                 </a>
-
-                <a href="#" target="_blank">
+                <a href="../../public/Curriculo_Gyovanna_Said_Giles.pdf" target="_blank" rel="noopener noreferrer">
                     Currículo
                 </a>
-
-                <a href="#" target="_blank">
+                <a href="https://github.com/gysaidg1" target="_blank" rel="noopener noreferrer">
                     GitHub
                 </a>
             </div>
@@ -382,7 +370,23 @@ const handleSubmit = async (e) => {
         </div>        
         <div class="d2">
             <p>© 2026 - Desenvolvido por <span>Gyovanna Said Giles</span></p>
-            <p class="tdw">Conecte-se linkedIN</p>
+            <div className="tdw footer-connect">
+              <span>Conecte-se</span>
+              <div className="footer-socials">
+                <a href="https://www.linkedin.com/in/gyovanna-said-6725203b8/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" title="LinkedIn">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.35V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.26 2.37 4.26 5.46v6.28ZM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12ZM7.12 20.45H3.56V9h3.56v11.45ZM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0Z"/></svg>
+                </a>
+                <a href="https://www.instagram.com/gy.saidg/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" title="Instagram">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5Zm0 2.2A2.8 2.8 0 0 0 4.2 7v10A2.8 2.8 0 0 0 7 19.8h10a2.8 2.8 0 0 0 2.8-2.8V7A2.8 2.8 0 0 0 17 4.2H7Zm5 2.3a5.5 5.5 0 1 1 0 11 5.5 5.5 0 0 1 0-11Zm0 2.2a3.3 3.3 0 1 0 0 6.6 3.3 3.3 0 0 0 0-6.6Zm5.7-3.2a1.3 1.3 0 1 1 0 2.6 1.3 1.3 0 0 1 0-2.6Z"/></svg>
+                </a>
+                <a href="https://wa.me/5521989299201?text=Ol%C3%A1%2C%20vi%20seu%20portf%C3%B3lio%20e%20gostaria%20de%20conversar!" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" title="WhatsApp">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.52 3.48A11.8 11.8 0 0 0 12.1 0C5.55 0 .22 5.33.22 11.9c0 2.1.55 4.15 1.6 5.96L.12 24l6.3-1.65a11.9 11.9 0 0 0 5.68 1.45h.01c6.56 0 11.9-5.34 11.9-11.9 0-3.18-1.24-6.17-3.49-8.42ZM12.1 21.8h-.01a9.9 9.9 0 0 1-5.04-1.38l-.36-.21-3.74.98 1-3.65-.24-.38a9.87 9.87 0 0 1-1.52-5.26c0-5.47 4.45-9.92 9.92-9.92 2.65 0 5.14 1.03 7.01 2.91a9.86 9.86 0 0 1 2.9 7.01c0 5.47-4.45 9.9-9.92 9.9Zm5.44-7.42c-.3-.15-1.76-.87-2.04-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.95 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.47-.9-.8-1.5-1.78-1.68-2.08-.17-.3-.02-.46.13-.61.14-.13.3-.35.45-.52.15-.18.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.5l-.57-.01c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.49 0 1.47 1.07 2.89 1.22 3.09.15.2 2.1 3.2 5.08 4.49.71.3 1.27.49 1.7.63.71.23 1.36.2 1.87.12.57-.08 1.76-.72 2.01-1.42.25-.7.25-1.3.17-1.42-.07-.12-.27-.2-.57-.35Z"/></svg>
+                </a>
+                <a href="https://github.com/gysaidg1" target="_blank" rel="noopener noreferrer" aria-label="GitHub" title="GitHub">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .8a11.2 11.2 0 0 0-3.54 21.83c.56.1.77-.24.77-.54v-2.1c-3.13.68-3.79-1.33-3.79-1.33-.51-1.3-1.25-1.65-1.25-1.65-1.02-.7.08-.69.08-.69 1.13.08 1.73 1.16 1.73 1.16 1 .1.78 2.2 3.58 1.57.1-.73.4-1.23.72-1.51-2.5-.28-5.13-1.25-5.13-5.56 0-1.23.44-2.24 1.16-3.03-.12-.28-.5-1.43.11-2.98 0 0 .95-.3 3.08 1.16a10.7 10.7 0 0 1 5.6 0c2.13-1.45 3.07-1.16 3.07-1.16.61 1.55.23 2.7.12 2.98.72.79 1.15 1.8 1.15 3.03 0 4.32-2.63 5.27-5.14 5.55.41.36.77 1.04.77 2.1v3.11c0 .3.2.65.78.54A11.2 11.2 0 0 0 12 .8Z"/></svg>
+                </a>
+              </div>
+            </div>
         </div>
     </div>
 </footer> 

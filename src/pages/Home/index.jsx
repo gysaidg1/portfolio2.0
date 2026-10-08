@@ -1,23 +1,11 @@
 
 import { useState } from 'react'
 import './style.css'
-import './form.js'
 import ftper from '../../assets/ftper.jpg'
 import mcMotors from '../../assets/mc\'motors.JPG' 
 import uvaflix from '../../assets/uvaflix.jpg'
 import obralyx from '../../assets/obralyx.jpg'
-import { supabase } from '../lib/supabaseClient'
-
-const { data, error } = await supabase
-  .from('usuarios')
-  .insert([
-    {
-      nome: 'Gyovanna',
-      email: 'teste@email.com',
-      telefone: '21999999999',
-      mensagem: 'Olá!'
-    }
-  ])
+import { supabase } from '../../Lib/supabaseClient';
 
 
 const projetos = [
@@ -59,6 +47,51 @@ const projetos = [
 const categorias = ["Frontend", "UX/UI"]
 
 function Home() {
+  const [form, setForm] = useState({
+  nome: '',
+  email: '',
+  mensagem: ''
+})
+
+const handleChange = (e) => {
+  setForm({
+    ...form,
+    [e.target.name]: e.target.value
+  })
+}
+
+const handleSubmit = async (e) => {
+  e.preventDefault()
+
+  const { error } = await supabase
+    .from('contatos')
+    .insert([form])
+
+  if (error) {
+    console.error(error)
+    alert('Erro ao enviar mensagem.')
+    return
+  }
+
+  try {
+  await fetch('http://localhost:3001/enviar', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(form)
+  })
+} catch (err) {
+  console.error('Erro ao enviar email:', err)
+}
+
+  alert('Mensagem enviada!')
+
+  setForm({
+    nome: '',
+    email: '',
+    mensagem: ''
+  })
+}
+
   const [pesquisa, setPesquisa] = useState('')
   const [indiceAtual, setIndiceAtual] = useState({})
   const [filtrosAbertos, setFiltrosAbertos] = useState(false)
@@ -278,21 +311,36 @@ function Home() {
       <section className="contato">
 
     <div className="contato-container">
-        <form className="formulario">
-            <h1>Vamos Conversar?</h1>
-            <input
-                type="text"
-                placeholder="Seu nome"
-            />
-            <input
-                type="email"
-                placeholder="Email"
-            />
-            <textarea placeholder="Mande uma mensagem"></textarea>
-            <button type="submit">
-                Enviar
-            </button>
-        </form>
+        <form className="formulario" onSubmit={handleSubmit}>
+  <h1>Vamos Conversar?</h1>
+
+  <input
+    type="text"
+    name="nome"
+    placeholder="Seu nome"
+    value={form.nome}
+    onChange={handleChange}
+  />
+
+  <input
+    type="email"
+    name="email"
+    placeholder="Email"
+    value={form.email}
+    onChange={handleChange}
+  />
+
+  <textarea
+    name="mensagem"
+    placeholder="Mande uma mensagem"
+    value={form.mensagem}
+    onChange={handleChange}
+  />
+
+  <button type="submit">
+    Enviar
+  </button>
+</form>
 
 
         
@@ -337,7 +385,8 @@ function Home() {
             <p class="tdw">Conecte-se linkedIN</p>
         </div>
     </div>
-</footer>   
+</footer> 
+
     </>
   )
 }

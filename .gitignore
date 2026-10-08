@@ -22,9 +22,9 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
-/src/pages/Home/form.js
 node_modules/
 .vite/
 dist/
 .env.local
 .env
+backend/node_modules

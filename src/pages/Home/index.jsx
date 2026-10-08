@@ -3,8 +3,13 @@ import { useState } from 'react'
 import './style.css'
 import ftper from '../../assets/ftper.jpg'
 import mcMotors from '../../assets/mc\'motors.JPG' 
+import sbrMc from '../../assets/sbr-mc.png'
+import vendasMc from '../../assets/vendas-mc.png'
 import uvaflix from '../../assets/uvaflix.jpg'
 import obralyx from '../../assets/obralyx.jpg'
+import sbrObralyx from '../../assets/sbr-obralyx.png'
+import projObralyx from '../../assets/proj-obralyx.png'
+import cttObralyx from '../../assets/ctt-obralyx.png'
 import { supabase } from '../../Lib/supabaseClient';
 
 
@@ -15,7 +20,7 @@ const projetos = [
     descricao: "Landing page automotiva.",
     tecnologias: ["HTML", "CSS"],
     categoria: "Frontend",
-    imagens: [mcMotors],
+    imagens: [mcMotors, sbrMc, vendasMc],
     demo: '#',
     github: 'https://github.com/gysaidg1/mcmotors'
   },
@@ -37,7 +42,7 @@ const projetos = [
     tecnologias: ["HTML", "CSS", "JavaScript", "Node.js", "MySQL"],
     linguagem: "JavaScript",
     categoria: "UX/UI",
-    imagens: [obralyx],
+    imagens: [obralyx, sbrObralyx, projObralyx, cttObralyx],
     demo: '#',
     github: 'https://github.com/gysaidg1/obralyx'
   }

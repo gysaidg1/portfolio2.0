@@ -152,7 +152,7 @@ function Home() {
     <>
       <header>
         <nav>
-          <div classNameName="logo-g"><a href="index.html">Said's</a></div>
+          <div className="logo-g"><a href="index.html">Said's</a></div>
           <ul>
             <li><a href="#inicio">INICIO</a></li>
             <li><a href="#projetos">PROJETOS</a></li>

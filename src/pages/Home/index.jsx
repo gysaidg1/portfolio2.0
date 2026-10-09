@@ -152,7 +152,7 @@ function Home() {
     <>
       <header>
         <nav>
-          <div className="logo-g"><a href="index.html">Said's</a></div>
+          <div classNameName="logo-g"><a href="index.html">Said's</a></div>
           <ul>
             <li><a href="#inicio">INICIO</a></li>
             <li><a href="#projetos">PROJETOS</a></li>
@@ -350,7 +350,7 @@ function Home() {
               <a href="https://www.instagram.com/gy.saidg/" target="_blank" rel="noopener noreferrer">
                 Instagram
               </a>
-              <a href="../public/Curriculo_Gyovanna_Said_Giles.pdf" target="_blank" rel="noopener noreferrer">
+              <a href="/Curriculo_Gyovanna_Said_Giles.pdf" target="_blank" rel="noopener noreferrer">
                 Currículo
               </a>
               <a href="https://github.com/gysaidg1" target="_blank" rel="noopener noreferrer">
@@ -362,13 +362,13 @@ function Home() {
       </section>
       </main>
 
-      <footer class="fbtm">
-        <div class="paibck">
-          <div class="d1">
-            <p class="uva">GYOVANNA SAID GILES</p>
+      <footer className="fbtm">
+        <div className="paibck">
+          <div className="d1">
+            <p className="uva">GYOVANNA SAID GILES</p>
             <p>Portfólio</p>
           </div>
-          <div class="d2">
+          <div className="d2">
             <p>© 2026 - Desenvolvido por <span>Gyovanna Said Giles</span></p>
             <div className="tdw footer-connect">
               <span>Conecte-se</span>

@@ -26,7 +26,7 @@ nav {
 
 .logo-g {
     text-transform: uppercase;
-    font-family: /*'Great Vibes', cursive*/ "Times New Roman", Times, serif;
+    font-family: "Times New Roman", Times, serif;
     font-size: 2.5rem;
     text-shadow: 0 0 10px rgba(255, 118, 210, 0.95);
 }
@@ -55,11 +55,7 @@ nav ul li a:hover {
     text-shadow: 0 0 10px rgba(255, 90, 195, 0.95),
                  0 0 20px rgba(255, 90, 195, 0.7);
 }
-
-
-
-
-                           /*SECTION PRINCIPAL*/
+/* SECTION PRINCIPAL */
 .inicio {
     scroll-margin-top: 110px;
     min-height: 90vh;
@@ -134,10 +130,6 @@ nav ul li a:hover {
     width: 100%;
     max-width: 280px;
     min-height: 220px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
     gap: 12px;
     margin-top: 28px;
     margin-left: auto;
@@ -185,12 +177,7 @@ nav ul li a:hover {
     width: 100%;
     max-width: 500px;
     margin: 70px auto 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
 }
-
 
 .texto-hover {
     opacity: 0;
@@ -212,8 +199,6 @@ nav ul li a:hover {
 
     transition: 0.15s ease;
 }
-
-
 .topico h2:hover + .texto-hover {
     opacity: 1;
     visibility: visible;
@@ -224,9 +209,7 @@ nav ul li a:hover {
                 0 0 18px rgba(255, 90, 195, 0.7),
                 0 0 26px rgba(255, 90, 195, 0.5);
 }
-
-
-                                 /*SECTION PROJETOS*/
+/* SECTION PROJETOS */
 .projetos {
     scroll-margin-top: 110px;
     min-height: 600px;
@@ -645,9 +628,7 @@ nav ul li a:hover {
 
 
 
-/* =========================
-   CONTATO
-========================= */
+/* =CONTATO= */
 
 .contato {
     scroll-margin-top: 110px;
@@ -681,9 +662,7 @@ nav ul li a:hover {
 }
 
 
-/* =========================
-   FORMULÁRIO
-========================= */
+/* FORMULÁRIO */
 .formulario {
     padding: 60px 50px;
     display: flex;
@@ -704,7 +683,6 @@ nav ul li a:hover {
 .formulario input,
 .formulario textarea {
     width: 85%;
-    box-sizing: border-box;
     margin-bottom: 18px;
     padding: 16px 18px;
     background: rgba(33, 28, 33, 0.8);
@@ -716,14 +694,10 @@ nav ul li a:hover {
     outline: none;
     transition: 0.25s ease;
 }
-
-
 .formulario textarea {
     height: 150px;
     resize: none;
 }
-
-
 .formulario input:focus,
 .formulario textarea:focus {
     border-color: rgba(255, 178, 230, 0.95);
@@ -754,11 +728,7 @@ nav ul li a:hover {
                 0 0 18px rgba(255, 120, 210, 0.14);
     transform: translateY(-1px);
 }
-
-
-/* =========================
-   ASIDE / REDES
-========================= */
+/* ASIDE / REDES */
 
 .redes {
     padding: 60px 50px;

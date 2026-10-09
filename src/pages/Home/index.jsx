@@ -2,7 +2,7 @@
 import { useState } from 'react'
 import './style.css'
 import ftper from '../../assets/ftper.jpg'
-import mcMotors from '../../assets/mc\'motors.JPG' 
+import mcMotors from '../../assets/mc\'motors.JPG'
 import sbrMc from '../../assets/sbr-mc.png'
 import vendasMc from '../../assets/vendas-mc.png'
 import uvaflix from '../../assets/uvaflix.jpg'
@@ -10,8 +10,7 @@ import obralyx from '../../assets/obralyx.jpg'
 import sbrObralyx from '../../assets/sbr-obralyx.png'
 import projObralyx from '../../assets/proj-obralyx.png'
 import cttObralyx from '../../assets/ctt-obralyx.png'
-import { supabase } from '../../Lib/supabaseClient';
-
+import { supabase } from '../../Lib/supabaseClient'
 
 const projetos = [
   {
@@ -52,39 +51,39 @@ const categorias = ["Frontend", "Backend", "Fullstack", "UX/UI"]
 
 function Home() {
   const [form, setForm] = useState({
-  nome: '',
-  email: '',
-  mensagem: ''
-})
-
-const handleChange = (e) => {
-  setForm({
-    ...form,
-    [e.target.name]: e.target.value
-  })
-}
-
-const handleSubmit = async (e) => {
-  e.preventDefault()
-
-  const { error } = await supabase
-    .from('contatos')
-    .insert([form])
-
-  if (error) {
-    console.error(error)
-    alert('Erro ao enviar mensagem.')
-    return
-  }
-
-  alert('Mensagem enviada!')
-
-  setForm({
     nome: '',
     email: '',
     mensagem: ''
   })
-}
+
+  const handleChange = (e) => {
+    setForm({
+      ...form,
+      [e.target.name]: e.target.value
+    })
+  }
+
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+
+    const { error } = await supabase
+      .from('contatos')
+      .insert([form])
+
+    if (error) {
+      console.error(error)
+      alert('Erro ao enviar mensagem.')
+      return
+    }
+
+    alert('Mensagem enviada!')
+
+    setForm({
+      nome: '',
+      email: '',
+      mensagem: ''
+    })
+  }
 
   const [pesquisa, setPesquisa] = useState('')
   const [indiceAtual, setIndiceAtual] = useState({})
@@ -304,76 +303,72 @@ const handleSubmit = async (e) => {
           )}
         </div>
       </section>
-
-
       <section className="contato" id="contato">
+        <div className="contato-container">
+          <form className="formulario" onSubmit={handleSubmit}>
+            <h1>Vamos Conversar?</h1>
 
-    <div className="contato-container">
-        <form className="formulario" onSubmit={handleSubmit}>
-  <h1>Vamos Conversar?</h1>
+            <input
+              type="text"
+              name="nome"
+              placeholder="Seu nome"
+              value={form.nome}
+              onChange={handleChange}
+            />
 
-  <input
-    type="text"
-    name="nome"
-    placeholder="Seu nome"
-    value={form.nome}
-    onChange={handleChange}
-  />
+            <input
+              type="email"
+              name="email"
+              placeholder="Email"
+              value={form.email}
+              onChange={handleChange}
+            />
 
-  <input
-    type="email"
-    name="email"
-    placeholder="Email"
-    value={form.email}
-    onChange={handleChange}
-  />
+            <textarea
+              name="mensagem"
+              placeholder="Mande uma mensagem"
+              value={form.mensagem}
+              onChange={handleChange}
+            />
 
-  <textarea
-    name="mensagem"
-    placeholder="Mande uma mensagem"
-    value={form.mensagem}
-    onChange={handleChange}
-  />
+            <button type="submit">Enviar</button>
+          </form>
 
-  <button type="submit">
-    Enviar
-  </button>
-</form>
-
-        <aside className="redes">
+          <aside className="redes">
             <h1>Além do Código</h1>
             <div className="links">
-                <a href="https://www.linkedin.com/in/gyovanna-said-6725203b8/" target="_blank" rel="noopener noreferrer">
-                    LinkedIn
-                </a>
-                <a
-               href="https://wa.me/5521989299201?text=Olá%2C%20vi%20seu%20portfólio%20e%20gostaria%20de%20conversar!"
-               target="_blank"
-               rel="noopener noreferrer">
-                    WhatsApp
-                </a>
-                <a href="https://www.instagram.com/gy.saidg/" target="_blank" rel="noopener noreferrer">
-                    Instagram
-                </a>
-                <a href="../../public/Curriculo_Gyovanna_Said_Giles.pdf" target="_blank" rel="noopener noreferrer">
-                    Currículo
-                </a>
-                <a href="https://github.com/gysaidg1" target="_blank" rel="noopener noreferrer">
-                    GitHub
-                </a>
+              <a href="https://www.linkedin.com/in/gyovanna-said-6725203b8/" target="_blank" rel="noopener noreferrer">
+                LinkedIn
+              </a>
+              <a
+                href="https://wa.me/5521989299201?text=Olá%2C%20vi%20seu%20portfólio%20e%20gostaria%20de%20conversar!"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                WhatsApp
+              </a>
+              <a href="https://www.instagram.com/gy.saidg/" target="_blank" rel="noopener noreferrer">
+                Instagram
+              </a>
+              <a href="../../public/Curriculo_Gyovanna_Said_Giles.pdf" target="_blank" rel="noopener noreferrer">
+                Currículo
+              </a>
+              <a href="https://github.com/gysaidg1" target="_blank" rel="noopener noreferrer">
+                GitHub
+              </a>
             </div>
-        </aside>
-    </div>
-</section>
+          </aside>
+        </div>
+      </section>
       </main>
 
       <footer class="fbtm">
-    <div class="paibck">
-        <div class="d1">
+        <div class="paibck">
+          <div class="d1">
             <p class="uva">GYOVANNA SAID GILES</p>
             <p>Portfólio</p>
-        </div>        
-        <div class="d2">
+          </div>
+          <div class="d2">
             <p>© 2026 - Desenvolvido por <span>Gyovanna Said Giles</span></p>
             <div className="tdw footer-connect">
               <span>Conecte-se</span>
@@ -392,13 +387,12 @@ const handleSubmit = async (e) => {
                 </a>
               </div>
             </div>
+          </div>
         </div>
-    </div>
-</footer> 
+      </footer>
 
     </>
   )
 }
-
 
 export default Home

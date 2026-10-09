@@ -710,10 +710,13 @@ nav ul li a:hover {
 .formulario button {
     width: 85%;
     padding: 15px 18px;
+    appearance: none;
+    -webkit-appearance: none;
     border: none;
     border-radius: 14px;
     background: linear-gradient(135deg, rgba(255, 120, 210, 0.45), rgba(186, 22, 219, 0.55));
     color: white;
+    font-family: inherit;
     font-size: 1rem;
     font-weight: 700;
     cursor: pointer;

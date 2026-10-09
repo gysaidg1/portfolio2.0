@@ -350,7 +350,7 @@ function Home() {
               <a href="https://www.instagram.com/gy.saidg/" target="_blank" rel="noopener noreferrer">
                 Instagram
               </a>
-              <a href="../../public/Curriculo_Gyovanna_Said_Giles.pdf" target="_blank" rel="noopener noreferrer">
+              <a href="../public/Curriculo_Gyovanna_Said_Giles.pdf" target="_blank" rel="noopener noreferrer">
                 Currículo
               </a>
               <a href="https://github.com/gysaidg1" target="_blank" rel="noopener noreferrer">
